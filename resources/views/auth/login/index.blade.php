@@ -3,25 +3,24 @@
 @section('content')
     <div class="card p-4">
         <div class="card-body d-flex flex-column gap-4">
-            <h2 class="h5 text-center">Login to your account</h2>
-            <form class="row gap-3" action="./" method="get" autocomplete="off" novalidate>
+            <h2 class="h5 text-center">Login Akun</h2>
+            <form class="row gap-3" action="{{ route('dashboard') }}" method="get" autocomplete="off" novalidate>
                 <div>
-                    <label class="form-label" for="email">Email or Username</label>
-                    <input class="form-control" id="email" type="email" placeholder="Email or Username"
-                        autocomplete="off">
+                    <label class="form-label" for="email">Email </label>
+                    <input class="form-control" id="email" type="email" placeholder="Email" autocomplete="off">
                 </div>
                 <div>
                     <div class="d-flex justify-content-between">
                         <label class="form-label" for="password">Password</label>
-                        <a href="./authentication/reset-password.html" >I forgot password</a>
+                        <a href="./authentication/reset-password.html">Lupa Password</a>
                     </div>
                     <div class="input-group">
                         <input class="form-control" id="password" type="password" placeholder="Password"
                             autocomplete="off">
                         <span class="input-group-text">
-                            <button class="bg-transparent border-0 p-0 link-secondary" type="button"
-                                data-coreui-toggle="tooltip" aria-label="Show password"
-                                data-coreui-original-title="Show password">
+                            <!-- Mengubah data-coreui-toggle menjadi id="togglePassword" -->
+                            <button class="bg-transparent border-0 p-0 link-secondary" type="button" id="togglePassword"
+                                aria-label="Show password">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path class="ci-primary" fill="var(--ci-primary-color, currentcolor)"
                                         d="M256 144.927a103.309 103.309 0 1 0 103.309 103.309A103.426 103.426 0 0 0 256 144.927m0 174.618a71.309 71.309 0 1 1 71.309-71.309A71.39 71.39 0 0 1 256 319.545">
@@ -39,7 +38,7 @@
                 <div>
                     <label class="form-check">
                         <input class="form-check-input" type="checkbox">
-                        <span class="form-check-label">Remember me on this device</span>
+                        <span class="form-check-label">Remember me</span>
                     </label>
                 </div>
                 <div>
@@ -77,3 +76,22 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function () {
+            // Tukar tipe input antara password dan text
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Opsional: Anda bisa mengganti warna atau ikon button di sini saat statusnya berubah
+            this.classList.toggle('link-primary');
+            this.classList.toggle('link-secondary');
+        });
+    });
+</script>
+@endpush

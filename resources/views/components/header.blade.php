@@ -64,7 +64,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#" role="button"
                     aria-haspopup="true" aria-expanded="false">
-                    <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg"
+                    <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/8.jpg') }}"
                             alt="user@email.com"></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
@@ -72,7 +72,7 @@
                         Account</div>
                     <a class="dropdown-item" href="/authentication/login.html">
                         <svg class="icon me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path 
+                            <path
                                 d="M11.491 7.875c-2.278 0-4.125 1.847-4.125 4.125s1.847 4.125 4.125 4.125c2.278 0 4.125-1.847 4.125-4.125v0c-0.003-2.277-1.848-4.122-4.125-4.125h-0zM11.491 14.625c-1.45 0-2.625-1.175-2.625-2.625s1.175-2.625 2.625-2.625c1.45 0 2.625 1.175 2.625 2.625v0c-0.002 1.449-1.176 2.623-2.625 2.625h-0z">
                             </path>
                             <path
@@ -82,7 +82,7 @@
                         Setting
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/authentication/login.html">
+                    <a class="dropdown-item" href="{{ route('login') }}">
                         <svg class="icon me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="var(--ci-primary-color, currentcolor)"
                                 d="M77.155 272.034H351.75v-32.001H77.155l75.053-75.053v-.001l-22.628-22.626-113.681 113.68.001.001h-.001L129.58 369.715l22.628-22.627v-.001z"
@@ -97,10 +97,7 @@
         </ul>
     </div>
     <div class="container-fluid px-4">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb my-0">
-                <li class="breadcrumb-item active"><span>Home</span></li>
-            </ol>
-        </nav>
+        {{-- Render breadcrumb dinamis sesuai nama route yang sedang diakses --}}
+        {{ Breadcrumbs::render() }}
     </div>
 </header>

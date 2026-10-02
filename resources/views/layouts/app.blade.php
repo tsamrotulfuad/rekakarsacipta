@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -23,7 +22,7 @@
         @include('components.header')
         {{-- Content --}}
         <div class="body flex-grow-1">
-            <div class="container-lg px-4">
+            <div class="container-fluid px-4">
                 @yield('content')
             </div>
         </div>
@@ -42,6 +41,7 @@
             }
         });
     </script>
+    @stack('script')
 </body>
 
 </html>

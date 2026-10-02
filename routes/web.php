@@ -13,6 +13,10 @@ Route::get('/dashboard', function () {
 Route::get('/proposals', function () {
     return view('admin.proposal.index');
 })->name('proposals');
+Route::get('/proposals/tambah', function () {
+    return view('admin.proposal.create');
+})->name('proposals.create');
+
 
 Route::get('/users', function () {
     return view('admin.user.index');
