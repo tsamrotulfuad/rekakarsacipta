@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Models\Admin\InovasiMasyarakat;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
@@ -25,6 +25,12 @@ Breadcrumbs::for('inovasi.masyarakat.create', function (BreadcrumbTrail $trail) 
     $trail->parent('inovasi.masyarakat.index');
     $trail->push('Tambah', route('inovasi.masyarakat.create'));
 });
+
+Breadcrumbs::for('inovasi.masyarakat.edit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('inovasi.masyarakat.index');
+    $trail->push('Ubah', route('inovasi.masyarakat.edit', $id));
+});
+
 
 
 
