@@ -15,15 +15,15 @@ Breadcrumbs::for('users', function (BreadcrumbTrail $trail) {
     $trail->push('Users', route('users'));
 });
 
-Breadcrumbs::for('proposals', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('inovasi.masyarakat.index', function (BreadcrumbTrail $trail) {
     // $trail->parent('dashboard');
-    $trail->push('Proposal', route('proposals'));
+    $trail->push('Inovasi', route('inovasi.masyarakat.index'));
 });
 
 // Halaman Detail User Dinamis (Dashboard > Users > Nama User)
-Breadcrumbs::for('proposals.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('proposals');
-    $trail->push('Form', route('proposals.create'));
+Breadcrumbs::for('inovasi.masyarakat.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('inovasi.masyarakat.index');
+    $trail->push('Tambah', route('inovasi.masyarakat.create'));
 });
 
 

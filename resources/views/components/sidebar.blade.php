@@ -45,21 +45,21 @@
                 {{-- <span class="badge badge-sm bg-info ms-auto">NEW</span> --}}
             </a>
         </li>
-        <li class="nav-title">Inovasi</li>
+        <li class="nav-title">Proposal</li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('proposals') }}">
+            <a class="nav-link" href="{{ route('inovasi.masyarakat.index') }}">
                 <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M15.686 0.75h-13.436v22.5h19.875v-16.061zM20.625 7.811v0.064h-5.625v-5.625h0.064zM3.75 21.75v-19.5h9.75v7.125h7.125v12.375z">
                     </path>
                 </svg>
-                Proposal
+                Inovasi
                 {{-- <span class="badge badge-sm bg-info ms-auto">NEW</span> --}}
             </a>
         </li>
         <li class="nav-title">Manage</li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('users') }}">
+            <a class="nav-link" href="#">
                 <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M21.682 14.826l-3.016-1.974 1.161-2.129c0.269-0.5 0.427-1.093 0.428-1.724v-3.375c0-0.004 0-0.008 0-0.012 0-2.691-2.181-4.872-4.872-4.872-1.281 0-2.446 0.494-3.316 1.302l0.003-0.003 1.019 1.1c0.6-0.556 1.405-0.897 2.291-0.897 1.864 0 3.375 1.511 3.375 3.375 0 0.002 0 0.005 0 0.007v-0 3.375c-0 0.367-0.091 0.713-0.25 1.018l0.006-0.012-1.824 3.344 4.175 2.732c0.542 0.358 0.894 0.965 0.894 1.654 0 0.002 0 0.005-0 0.007v-0 2.508h-3.375v1.5h4.875v-4.008c0-0.003 0-0.006 0-0.009 0-1.211-0.62-2.277-1.56-2.898l-0.013-0.008z">
