@@ -13,7 +13,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/register', function () {
-    return view('admin.user.index');
+    return view('auth.register.index');
 })->name('register');
 
 Route::get('/users', function () {
