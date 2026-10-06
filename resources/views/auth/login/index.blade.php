@@ -3,7 +3,7 @@
 @section('content')
     <div class="card p-4">
         <div class="card-body d-flex flex-column gap-4">
-            <h2 class="h5 text-center">Login Akun</h2>
+            <h2 class="h5 text-center">Masuk Akun</h2>
             <form class="row gap-3" action="{{ route('dashboard') }}" method="get" autocomplete="off" novalidate>
                 <div>
                     <label class="form-label" for="email">Email </label>
@@ -12,7 +12,7 @@
                 <div>
                     <div class="d-flex justify-content-between">
                         <label class="form-label" for="password">Password</label>
-                        <a href="./authentication/reset-password.html">Lupa Password</a>
+                        <a href="#" class="text-decoration-none">Lupa Password</a>
                     </div>
                     <div class="input-group">
                         <input class="form-control" id="password" type="password" placeholder="Password"
@@ -36,13 +36,7 @@
                     </div>
                 </div>
                 <div>
-                    <label class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                        <span class="form-check-label">Remember me</span>
-                    </label>
-                </div>
-                <div>
-                    <button class="btn btn-primary w-100" type="submit">Sign in</button>
+                    <button class="btn btn-primary w-100" type="submit">Masuk</button>
                 </div>
             </form>
             <div class="position-relative">
@@ -69,29 +63,33 @@
                                 d="M12.2606 4.74998C14.0691 4.74998 15.6834 5.35999 16.9605 6.54999L20.4548 3.12999C18.3398 1.18999 15.571 -1.52588e-05 12.2606 -1.52588e-05C7.46882 -1.52588e-05 3.33089 2.69999 1.31812 6.61999L5.38453 9.70999C6.35515 6.85999 9.06269 4.74998 12.2606 4.74998Z"
                                 fill="#EA4335"></path>
                         </svg>
-                        Login with Google
+                        Masuk dengan Akun Google
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <div class="text-center text-body-secondary">
+        Butuh akun?
+        <a href="{{ route('register') }}" class="text-decoration-none">Daftar Akun</a>
+    </div>
 @endsection
 
 @push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const togglePassword = document.querySelector('#togglePassword');
-        const passwordInput = document.querySelector('#password');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.querySelector('#togglePassword');
+            const passwordInput = document.querySelector('#password');
 
-        togglePassword.addEventListener('click', function () {
-            // Tukar tipe input antara password dan text
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            
-            // Opsional: Anda bisa mengganti warna atau ikon button di sini saat statusnya berubah
-            this.classList.toggle('link-primary');
-            this.classList.toggle('link-secondary');
+            togglePassword.addEventListener('click', function() {
+                // Tukar tipe input antara password dan text
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Opsional: Anda bisa mengganti warna atau ikon button di sini saat statusnya berubah
+                this.classList.toggle('link-primary');
+                this.classList.toggle('link-secondary');
+            });
         });
-    });
-</script>
+    </script>
 @endpush

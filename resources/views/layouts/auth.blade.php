@@ -40,10 +40,7 @@
                 </svg>
 
                 @yield('content')
-                <div class="text-center text-body-secondary">
-                    Need an account?
-                    <a href="{{ route('register') }}">Sign up</a>
-                </div>
+        
             </div>
         </div>
     </div>
