@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('kemanfaatan');
             $table->string('kemanfaatan_upload');
             $table->text('kualitas_video');
-            // $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

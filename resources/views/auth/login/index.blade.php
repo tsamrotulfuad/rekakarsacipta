@@ -4,10 +4,44 @@
     <div class="card p-4">
         <div class="card-body d-flex flex-column gap-4">
             <h2 class="h5 text-center">Masuk Akun</h2>
-            <form class="row gap-3" action="{{ route('dashboard') }}" method="get" autocomplete="off" novalidate>
+            @if ($errors->any())
+                <div class="card border-start border-start-lg border-danger mb-3 bg-danger bg-opacity-10"
+                    style="margin-top: 5px;">
+                    <div class="card-body p-3 d-flex align-items-center">
+                        <!-- Ikon Tanda Seru / Peringatan -->
+                        <svg class="icon icon-lg me-3 text-danger" xmlns="http://w3.org" width="24" height="24"
+                            fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path
+                                d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+                        </svg>
+                        <!-- Teks Pesan Error -->
+                        <div class="text-danger-emphasis fw-medium">
+                            {{ $errors->first() }}
+                        </div>
+                    </div>
+                </div>
+            @endif
+            @if (session('message'))
+                <div class="card border-start border-start-lg border-success mb-3 bg-success bg-opacity-10">
+                    <div class="card-body p-3 d-flex align-items-center">
+                        <!-- Ikon Centang Sukses -->
+                        <svg class="icon icon-lg me-3 text-success" xmlns="http://w3.org" width="24" height="24"
+                            fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                        <div class="text-success-emphasis fw-medium">
+                            {{ session('message') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
+            <form class="row gap-3" action="{{ route('login') }}" method="POST" autocomplete="off" novalidate>
                 <div>
                     <label class="form-label" for="email">Email </label>
-                    <input class="form-control" id="email" type="email" placeholder="Email" autocomplete="off">
+                    <input class="form-control" id="email" name="email" type="email" placeholder="Email"
+                        value="{{ old('email') }}" autocomplete="off">
                 </div>
                 <div>
                     <div class="d-flex justify-content-between">
@@ -15,7 +49,7 @@
                         <a href="#" class="text-decoration-none">Lupa Password</a>
                     </div>
                     <div class="input-group">
-                        <input class="form-control" id="password" type="password" placeholder="Password"
+                        <input class="form-control" id="password" type="password" name="password" placeholder="Password"
                             autocomplete="off">
                         <span class="input-group-text">
                             <!-- Mengubah data-coreui-toggle menjadi id="togglePassword" -->
@@ -39,11 +73,12 @@
                     <button class="btn btn-primary w-100" type="submit">Masuk</button>
                 </div>
             </form>
+
             <div class="position-relative">
                 <hr>
                 <div
                     class="position-absolute top-50 start-50 translate-middle bg-body px-2 text-body-tertiary text-uppercase small">
-                    or</div>
+                    atau</div>
             </div>
             <div class="row">
                 <div class="col">

@@ -4,26 +4,26 @@
     <div class="card p-4">
         <div class="card-body d-flex flex-column gap-4">
             <h2 class="h5 text-center">Buat Akun Baru</h2>
-            <form class="row gap-3 text-start" action="#" method="get" autocomplete="off"
-                novalidate>
+            <form class="row gap-3 text-start" action="{{ route('register') }}" method="POST" autocomplete="off" novalidate>
                 <div>
                     <label class="form-label" for="name">Nama</label>
-                    <input class="form-control" name="name" id="name" type="text" placeholder="Your name" autocomplete="off">
+                    <input class="form-control" name="name" id="name" type="text" placeholder="Masukkan Nama Anda"
+                        autocomplete="off">
                 </div>
                 <div>
                     <label class="form-label" for="email">Email</label>
-                    <input class="form-control" name="email" id="email" type="email" placeholder="your@email.com"
-                        autocomplete="off">
+                    <input class="form-control" name="email" id="email" type="email"
+                        placeholder="Masukkan Email Anda" autocomplete="off">
                 </div>
                 <div>
                     <label class="form-label" for="password">Password</label>
                     <div class="input-group">
-                        <input class="form-control" name="password" id="password" type="password" placeholder="Your password"
-                            autocomplete="off">
+                        <input class="form-control" name="password" id="password" type="password"
+                            placeholder="Masukkan Password" autocomplete="off">
                         <span class="input-group-text">
-                            <button class="bg-transparent border-0 p-0 link-secondary" type="button"
-                                data-coreui-toggle="tooltip" aria-label="Show password"
-                                data-coreui-original-title="Show password">
+                            <!-- Mengubah data-coreui-toggle menjadi id="togglePassword" -->
+                            <button class="bg-transparent border-0 p-0 link-secondary" type="button" id="togglePassword"
+                                aria-label="Show password">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path class="ci-primary" fill="var(--ci-primary-color, currentcolor)"
                                         d="M256 144.927a103.309 103.309 0 1 0 103.309 103.309A103.426 103.426 0 0 0 256 144.927m0 174.618a71.309 71.309 0 1 1 71.309-71.309A71.39 71.39 0 0 1 256 319.545">
@@ -77,3 +77,22 @@
         <a href="{{ route('login') }}" class="text-decoration-none">Masuk</a>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.querySelector('#togglePassword');
+            const passwordInput = document.querySelector('#password');
+
+            togglePassword.addEventListener('click', function() {
+                // Tukar tipe input antara password dan text
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Opsional: Anda bisa mengganti warna atau ikon button di sini saat statusnya berubah
+                this.classList.toggle('link-primary');
+                this.classList.toggle('link-secondary');
+            });
+        });
+    </script>
+@endpush

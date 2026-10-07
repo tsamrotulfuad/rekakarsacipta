@@ -44,10 +44,10 @@ class InovasiMasyarakat extends Model
             }
         });
 
-        // static::creating(function ($model) {
-        // if (Auth::check()) {
-        //     $model->user_id = Auth::id();
-        //     }
-        // });
+        static::creating(function ($model) {
+        if (Auth::check()) {
+            $model->user_id = Auth::id();
+            }
+        });
     }
 }
