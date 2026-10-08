@@ -31,7 +31,7 @@
                             <td>{{ $item->tahapan }}</td>
                             <td>{{ $item->jenis }}</td>
                             <td>{{ $item->waktu_penerapan }}</td>
-                            <td>{{ $item->user_id }}</td>
+                            <td>{{ $item->user->user_id }}</td>
                             <td>
                                 <div class="d-flex gap-1 align-items-center">
                                     <a href="{{ route('inovasi.masyarakat.edit', $item->id) }}"

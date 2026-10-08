@@ -13,11 +13,10 @@
                         <th scope="col" style="width: 2%">#</th>
                         <th scope="col">Nama Inovasi</th>
                         <th scope="col">Insiator</th>
-                        <th scope="col" style="width: 4%">Bentuk</th>
-                        <th scope="col">Tahapan</th>
-                        <th scope="col">Jenis</th>
-                        <th scope="col" style="width: 4%">Waktu Penerapan</th>
-                        <th scope="col">User ID</th>
+                        <th scope="col" style="width: 10%">Bentuk</th>
+                        <th scope="col" style="width: 4%">Tahapan</th>
+                        <th scope="col" style="width: 4%">Jenis</th>
+                        <th scope="col" style="width: 12%">Waktu Penerapan</th>
                         <th scope="col" style="width: 10%">Aksi</th>
                     </tr>
                 </thead>
@@ -30,8 +29,7 @@
                             <td>{{ $item->bentuk }}</td>
                             <td>{{ $item->tahapan }}</td>
                             <td>{{ $item->jenis }}</td>
-                            <td>{{ $item->waktu_penerapan }}</td>
-                            <td>{{ $item->user_id }}</td>
+                            <td>{{ \Carbon\Carbon::parse($item->waktu_penerapan)->translatedFormat('d F Y') }}</td>
                             <td>
                                 <div class="d-flex gap-1 align-items-center">
                                     <a href="{{ route('inovasi.masyarakat.edit', $item->id) }}"

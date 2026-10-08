@@ -29,7 +29,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Mengalihkan user ke halaman tujuan awal sebelum diintersep auth, atau ke dashboard
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended('/masyarakat/dashboard');
         }
 
         // 3. Jika gagal login, lempar exception validasi untuk kembali ke form awal

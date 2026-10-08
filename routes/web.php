@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\Masyarakat\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -40,26 +39,26 @@ Route::middleware('auth')->group(function () {
 
 // Admin Inovasi
 Route::middleware(['auth', 'verified'])->prefix('admin')->group(function() {  
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'); //Dashboard Masyrakat
+    Route::get('/dashboard', [App\Http\Controllers\Admin\Masyarakat\DashboardController::class, 'index'])->name('admin.dashboard'); //Dashboard Masyrakat
 
-    Route::get('/inovasi/masyarakat', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'index'])->name('inovasi.masyarakat.index'); //Inovasi Masyrakat
-    Route::get('/inovasi/masyarakat/tambah', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'create'])->name('inovasi.masyarakat.create'); 
-    Route::post('/inovasi/masyarakat/tambah', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'store'])->name('inovasi.masyarakat.store'); 
-    Route::get('/inovasi/masyarakat/{id}/edit', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'edit'])->name('inovasi.masyarakat.edit');
-    Route::put('/inovasi/masyarakat/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'update'])->name('inovasi.masyarakat.update');
-    Route::delete('/inovasi/masyarakat/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'destroy'])->name('inovasi.masyarakat.destroy');
+    Route::get('/inovasi/masyarakat', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'index'])->name('inovasi.admin.index'); //Inovasi Masyrakat
+    Route::get('/inovasi/masyarakat/tambah', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'create'])->name('inovasi.admin.create'); 
+    Route::post('/inovasi/masyarakat/tambah', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'store'])->name('inovasi.admin.store'); 
+    Route::get('/inovasi/masyarakat/{id}/edit', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'edit'])->name('inovasi.admin.edit');
+    Route::put('/inovasi/masyarakat/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'update'])->name('inovasi.admin.update');
+    Route::delete('/inovasi/masyarakat/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'destroy'])->name('inovasi.admin.destroy');
 });
 
 // Masyarakat Inovasi
 Route::middleware(['auth', 'verified'])->prefix('masyarakat')->group(function() {  
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'); //Dashboard Masyrakat
+    Route::get('/dashboard', [App\Http\Controllers\Masyarakat\DashboardController::class, 'index'])->name('dashboard'); //Dashboard Masyrakat
 
-    Route::get('/inovasi', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'index'])->name('inovasi.masyarakat.index'); //Inovasi Masyrakat
-    Route::get('/inovasi/tambah', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'create'])->name('inovasi.masyarakat.create'); 
-    Route::post('/inovasi/tambah', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'store'])->name('inovasi.masyarakat.store'); 
-    Route::get('/inovasi/{id}/edit', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'edit'])->name('inovasi.masyarakat.edit');
-    Route::put('/inovasi/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'update'])->name('inovasi.masyarakat.update');
-    Route::delete('/inovasi/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'destroy'])->name('inovasi.masyarakat.destroy');
+    Route::get('/inovasi', [App\Http\Controllers\Masyarakat\InovasiController::class, 'index'])->name('inovasi.masyarakat.index'); //Inovasi Masyrakat
+    Route::get('/inovasi/tambah', [App\Http\Controllers\Masyarakat\InovasiController::class, 'create'])->name('inovasi.masyarakat.create'); 
+    Route::post('/inovasi/tambah', [App\Http\Controllers\Masyarakat\InovasiController::class, 'store'])->name('inovasi.masyarakat.store'); 
+    Route::get('/inovasi/{id}/edit', [App\Http\Controllers\Masyarakat\InovasiController::class, 'edit'])->name('inovasi.masyarakat.edit');
+    Route::put('/inovasi/{id}', [App\Http\Controllers\Masyarakat\InovasiController::class, 'update'])->name('inovasi.masyarakat.update');
+    Route::delete('/inovasi/{id}', [App\Http\Controllers\Masyarakat\InovasiController::class, 'destroy'])->name('inovasi.masyarakat.destroy');
 });
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');

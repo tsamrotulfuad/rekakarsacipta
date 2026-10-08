@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Masyarakat;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\InovasiMasyarakat;
+use App\Models\InovasiMasyarakat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

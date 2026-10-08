@@ -15,6 +15,23 @@ Breadcrumbs::for('users', function (BreadcrumbTrail $trail) {
     $trail->push('Users', route('users'));
 });
 
+Breadcrumbs::for('inovasi.admin.index', function (BreadcrumbTrail $trail) {
+    // $trail->parent('dashboard');
+    $trail->push('Inovasi', route('inovasi.admin.index'));
+});
+
+// Halaman Detail User Dinamis (Dashboard > Users > Nama User)
+Breadcrumbs::for('inovasi.admin.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('inovasi.admin.index');
+    $trail->push('Tambah', route('inovasi.admin.create'));
+});
+
+Breadcrumbs::for('inovasi.admin.edit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('inovasi.admin.index');
+    $trail->push('Ubah', route('inovasi.admin.edit', $id));
+});
+
+
 Breadcrumbs::for('inovasi.masyarakat.index', function (BreadcrumbTrail $trail) {
     // $trail->parent('dashboard');
     $trail->push('Inovasi', route('inovasi.masyarakat.index'));

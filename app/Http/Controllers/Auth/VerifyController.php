@@ -19,7 +19,7 @@ class VerifyController extends Controller
     {
         $request->fulfill();
 
-        return redirect('/admin/dashboard')->with('message', 'Email berhasil diverifikasi!');
+        return redirect('/masyarakat/dashboard')->with('message', 'Email berhasil diverifikasi!');
     }
 
     // Mengirim ulang tautan verifikasi
