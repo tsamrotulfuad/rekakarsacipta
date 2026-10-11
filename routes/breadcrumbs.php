@@ -1,12 +1,38 @@
 <?php
 
-use App\Models\Admin\InovasiMasyarakat;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
 // Beranda / Dashboard
 Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
     $trail->push('Dashboard', route('dashboard'));
+});
+
+// Beranda / Dashboard Admin
+Breadcrumbs::for('admin.dashboard', function (BreadcrumbTrail $trail) {
+    $trail->push('Dashboard', route('admin.dashboard'));
+});
+
+// Admin User
+Breadcrumbs::for('users.admin.index', function (BreadcrumbTrail $trail) {
+    $trail->push('User', route('users.admin.index'));
+});
+
+// Admin create User
+Breadcrumbs::for('users.admin.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('users.admin.index');
+    $trail->push('Tambah', route('users.admin.create'));
+});
+
+// Admin edit User
+Breadcrumbs::for('users.admin.edit', function (BreadcrumbTrail $trail, $id) {
+    $trail->parent('users.admin.index');
+    $trail->push('Edit', route('users.admin.edit', $id));
+});
+
+// Beranda / Dashboard Masyarakat
+Breadcrumbs::for('masyarakat.dashboard', function (BreadcrumbTrail $trail) {
+    $trail->push('Dashboard', route('masyarakat.dashboard'));
 });
 
 // Halaman Manajemen User (Dashboard > Users)

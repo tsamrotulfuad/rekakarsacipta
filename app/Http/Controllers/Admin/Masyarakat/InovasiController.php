@@ -11,7 +11,7 @@ class InovasiController extends Controller
 {
     public function index()
     {
-        $inovasiMasyarakat = InovasiMasyarakat::latest()->paginate(10);
+        $inovasiMasyarakat = InovasiMasyarakat::with('user')->latest()->paginate(10);
 
         return view('admin.inovasi.index', compact('inovasiMasyarakat'));
     }

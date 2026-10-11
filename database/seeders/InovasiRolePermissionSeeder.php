@@ -2,50 +2,55 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
 
 class InovasiRolePermissionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        // 1. Reset cache Spatie Permission
-        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        // Reset cache permission
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // 2. Definisikan semua Permission terkait Fitur Inovasi
+        // 1. Buat Permission
         $permissions = [
-            //'view-any inovasi',   // Melihat semua list inovasi (Admin)
-            //'view-own inovasi',   // Melihat inovasi milik sendiri (Masyarakat)
-            'create inovasi',     // Menginput/membuat inovasi baru (Admin & Masyarakat)
-            'edit-any inovasi',   // Mengedit semua inovasi (Admin)
-            'edit-own inovasi',   // Mengedit inovasi milik sendiri (Masyarakat)
-            'delete-any inovasi', // Menghapus semua inovasi (Admin)
-            'delete-own inovasi', // Menghapus inovasi milik sendiri (Masyarakat)
-            //'approve inovasi',    // Validasi / menyetujui inovasi dari masyarakat (Admin)
+            'create inovasi',
+            'edit-any inovasi',
+            'edit-own inovasi',
+            'delete-any inovasi',
+            'delete-own inovasi',
         ];
 
-        // Buat semua permission di atas ke dalam database
         foreach ($permissions as $permission) {
-            Permission::create(['name' => $permission]);
+            Permission::firstOrCreate(['name' => $permission, 'guard_name' => 'web']);
         }
 
-        // 3. Buat Role MASYARAKAT dan Berikan Hak Aksesnya
-        $roleMasyarakat = Role::create(['name' => 'masyarakat']);
-        $roleMasyarakat->givePermissionTo([
-            // 'view-own inovasi',
+        // 2. Buat Role & Assign Permission
+        $roleMasyarakat = Role::firstOrCreate(['name' => 'masyarakat', 'guard_name' => 'web']);
+        $roleMasyarakat->syncPermissions([
             'create inovasi',
             'edit-own inovasi',
             'delete-own inovasi'
         ]);
 
-        // 4. Buat Role ADMIN dan Berikan Semua Hak Akses
-        $roleAdmin = Role::create(['name' => 'admin']);
-        $roleAdmin->givePermissionTo(Permission::all()); // Admin otomatis mendapat semua permission
+        $roleAdmin = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        $roleAdmin->syncPermissions(Permission::all());
 
+        // 3. Buat User Admin
+        // Catatan: Jika User model meng-cast 'password' => 'hashed', gunakan 'password123' langsung tanpa Hash::make()
+        $admin = User::updateOrCreate(
+            ['email' => 'admin@bapperida.go.id'],
+            [
+                'name' => 'Admin',
+                'password' => Hash::make('password123'),
+                'email_verified_at' => now(),
+            ]
+        );
+
+        $admin->syncRoles($roleAdmin);
     }
 }

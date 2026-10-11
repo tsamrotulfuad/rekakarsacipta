@@ -22,17 +22,30 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        // 2. Coba mencocokkan kredensial ke database (Otomatis memverifikasi Bcrypt)
+        // 2. Coba autentikasi pengguna
         if (Auth::attempt($credentials)) {
 
-            // Membuat ulang ID sesi untuk mencegah serangan Session Fixation
+            // Regenerasi ID sesi untuk mencegah serangan Session Fixation
             $request->session()->regenerate();
 
-            // Mengalihkan user ke halaman tujuan awal sebelum diintersep auth, atau ke dashboard
-            return redirect()->intended('/masyarakat/dashboard');
+            // Ambil data user yang sedang login
+            $user = Auth::user();
+
+            // Pengecekan role menggunakan Spatie Permission
+            if ($user->hasRole('admin')) {
+                return redirect()->intended('/admin/dashboard');
+            } elseif ($user->hasRole('masyarakat')) {
+                return redirect()->intended('/masyarakat/dashboard');
+            }
+
+            // Opsi fallback jika role tidak sesuai atau tidak terdefinisi
+            Auth::logout();
+            throw ValidationException::withMessages([
+                'email' => 'Email atau password yang Anda masukkan salah.',
+            ]);
         }
 
-        // 3. Jika gagal login, lempar exception validasi untuk kembali ke form awal
+        // 3. Jika gagal login
         throw ValidationException::withMessages([
             'email' => 'Email atau password yang Anda masukkan salah.',
         ]);

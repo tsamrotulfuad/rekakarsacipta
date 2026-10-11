@@ -64,13 +64,13 @@
             <li class="nav-item dropdown">
                 <a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#" role="button"
                     aria-haspopup="true" aria-expanded="false">
-                    <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/8.jpg') }}"
+                    <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/default-avatar.webp') }}"
                             alt="user@email.com"></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
                     <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold rounded-top mb-2">
                         Account</div>
-                    <a class="dropdown-item" href="/authentication/login.html">
+                    <a class="dropdown-item" href="#">
                         <svg class="icon me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
                                 d="M11.491 7.875c-2.278 0-4.125 1.847-4.125 4.125s1.847 4.125 4.125 4.125c2.278 0 4.125-1.847 4.125-4.125v0c-0.003-2.277-1.848-4.122-4.125-4.125h-0zM11.491 14.625c-1.45 0-2.625-1.175-2.625-2.625s1.175-2.625 2.625-2.625c1.45 0 2.625 1.175 2.625 2.625v0c-0.002 1.449-1.176 2.623-2.625 2.625h-0z">

@@ -78,13 +78,11 @@ class InovasiController extends Controller
         return redirect()->route('inovasi.masyarakat.index')->with('success', 'Data berhasil ditambahkan.');
     }
 
-    public function edit(string $id)
+    public function edit(InovasiMasyarakat $inovasiMasyarakat)
     {
-        $inovasiMasyarakat = InovasiMasyarakat::findOrFail($id);
-
-        return view('admin.inovasi.edit', compact('inovasiMasyarakat'));
+        return view('masyarakat.inovasi.edit', compact('inovasiMasyarakat'));
     }
-
+    
     public function update(Request $request, string $id)
     {
         $inovasiMasyarakat = InovasiMasyarakat::findOrFail($id);

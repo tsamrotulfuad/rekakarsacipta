@@ -13,8 +13,8 @@
   <div class="col-md-2">
     <div class="card">
       <div class="card-body">
-        <h1 class="card-title mb-3">0</h5>
-        <p class="card-text">Users</p>
+        <h1 class="card-title mb-3">{{ $totalMasyarat}}</h5>
+        <p class="card-text">Masyarakat</p>
       </div>
     </div>
   </div>

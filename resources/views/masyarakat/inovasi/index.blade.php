@@ -32,11 +32,11 @@
                             <td>{{ \Carbon\Carbon::parse($item->waktu_penerapan)->translatedFormat('d F Y') }}</td>
                             <td>
                                 <div class="d-flex gap-1 align-items-center">
-                                    <a href="{{ route('inovasi.masyarakat.edit', $item->id) }}"
+                                    <a href="{{ route('inovasi.masyarakat.edit', $item) }}"
                                         class="btn btn-primary btn-sm">Edit</a>
 
                                     <form onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
-                                        action="{{ route('inovasi.masyarakat.destroy', $item->id) }}" method="POST"
+                                        action="{{ route('inovasi.masyarakat.destroy', $item) }}" method="POST"
                                         class="m-0">
                                         @csrf
                                         @method('DELETE')

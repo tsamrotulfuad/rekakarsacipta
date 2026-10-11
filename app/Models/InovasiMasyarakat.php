@@ -34,6 +34,11 @@ class InovasiMasyarakat extends Model
         'kualitas_video',
     ];
 
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
+
     protected static function boot()
     {
         parent::boot();
