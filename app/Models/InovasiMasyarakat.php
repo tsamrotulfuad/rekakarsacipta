@@ -12,8 +12,11 @@ class InovasiMasyarakat extends Model
     protected $fillable = [
         'nama_inovasi',
         'nama_inisiator',
+        'kategori',
+        'asal_instansi',
         'hp',
         'ktp',
+        'skd',
         'bentuk',
         'tahapan',
         'jenis',
@@ -32,6 +35,7 @@ class InovasiMasyarakat extends Model
         'kemanfaatan',
         'kemanfaatan_upload',
         'kualitas_video',
+        'user_id',
     ];
 
     public function getRouteKeyName(): string

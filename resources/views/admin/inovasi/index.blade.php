@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <a href="{{ route('inovasi.masyarakat.create') }}" type="button" class="btn btn-primary">Tambah</a>
+        <a href="{{ route('inovasi.admin.create') }}" type="button" class="btn btn-primary">Tambah</a>
     </div>
     <div class="card mt-4 p-3">
         <div class="table-responsive">

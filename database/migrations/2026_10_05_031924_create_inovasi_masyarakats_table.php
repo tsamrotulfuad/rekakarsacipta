@@ -16,8 +16,11 @@ return new class extends Migration
             $table->uuid('uuid')->unique();
             $table->string('nama_inovasi');
             $table->string('nama_inisiator');
+            $table->string('kategori');
+            $table->string('asal_instansi')->nullable();
             $table->string('hp', length: 14);
             $table->string('ktp', length: 16);
+            $table->string('skd')->nullable(); // Surat Keterangan Domisili
             $table->string('bentuk');
             $table->string('tahapan');
             $table->string('jenis');
