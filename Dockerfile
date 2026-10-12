@@ -25,7 +25,8 @@ WORKDIR /var/www
 COPY . /var/www
 
 # Set user permissions for core runtime paths
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+RUN chown -R www-data:www-data /var/webapp/storage /var/webapp/bootstrap/cache \
+    && chmod -R 775 /var/webapp/storage /var/webapp/bootstrap/cache
 
 EXPOSE 9000
 CMD ["php-fpm"]
