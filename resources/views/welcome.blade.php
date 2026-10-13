@@ -104,7 +104,7 @@
             <div class="carousel-inner">
                 <!-- Slide 1 (Tema Lomba Inovasi) -->
                 <div class="carousel-item active"
-                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://127.0.0.1:8000/covers/rkc2025.webp') no-repeat center center; background-size: cover;">
+                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://rekakarsacipta.pasuruankota.go.id/covers/rkc2025.webp') no-repeat center center; background-size: cover;">
                     <div class="container-fluid py-5">
                         <div class="row align-items-center justify-content-center text-center text-white"
                             style="min-height: 450px;">
@@ -124,7 +124,7 @@
                 </div>
                 <!-- Slide 2 (Tema Kompetisi/Eksibisi) -->
                 <div class="carousel-item"
-                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('http://127.0.0.1:8000/covers/covers.webp') no-repeat center center; background-size: cover;">
+                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://rekakarsacipta.pasuruankota.go.id/covers/covers.webp') no-repeat center center; background-size: cover;">
                     <div class="container py-5">
                         <div class="row align-items-center justify-content-center text-center text-white"
                             style="min-height: 450px;">
