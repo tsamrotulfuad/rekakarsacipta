@@ -10,24 +10,26 @@
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
         <li class="nav-title">Main</li>
-        
+
         {{-- Dashboard Link Berdasarkan Role --}}
         <li class="nav-item">
             @role('admin')
-                <a class="nav-link {{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
-            @elserole('masyarakat')
-                <a class="nav-link {{ request()->routeIs('masyarakat.dashboard.index') ? 'active' : '' }}" href="{{ route('masyarakat.dashboard') }}">
-            @endrole
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="var(--ci-primary-color, currentcolor)"
-                        d="M425.706 142.294A240 240 0 0 0 16 312v88h144v-32H48v-56c0-114.691 93.309-208 208-208s208 93.309 208 208v56H352v32h144v-88a238.43 238.43 0 0 0-70.294-169.706"
-                        class="ci-primary" />
-                    <path fill="var(--ci-primary-color, currentcolor)"
-                        d="M80 264h32v32H80zm160-136h32v32h-32zm-104 40h32v32h-32zm264 96h32v32h-32zm-102.778 71.1 69.2-144.173-28.85-13.848-69.183 144.135a64.141 64.141 0 1 0 28.833 13.886M256 416a32 32 0 1 1 32-32 32.036 32.036 0 0 1-32 32"
-                        class="ci-primary" />
-                </svg>
-                Dashboard
-            </a>
+                <a class="nav-link {{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}"
+                    href="{{ route('admin.dashboard') }}">
+                    @elserole('masyarakat')
+                    <a class="nav-link {{ request()->routeIs('masyarakat.dashboard.index') ? 'active' : '' }}"
+                        href="{{ route('masyarakat.dashboard') }}">
+                    @endrole
+                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="var(--ci-primary-color, currentcolor)"
+                            d="M425.706 142.294A240 240 0 0 0 16 312v88h144v-32H48v-56c0-114.691 93.309-208 208-208s208 93.309 208 208v56H352v32h144v-88a238.43 238.43 0 0 0-70.294-169.706"
+                            class="ci-primary" />
+                        <path fill="var(--ci-primary-color, currentcolor)"
+                            d="M80 264h32v32H80zm160-136h32v32h-32zm-104 40h32v32h-32zm264 96h32v32h-32zm-102.778 71.1 69.2-144.173-28.85-13.848-69.183 144.135a64.141 64.141 0 1 0 28.833 13.886M256 416a32 32 0 1 1 32-32 32.036 32.036 0 0 1-32 32"
+                            class="ci-primary" />
+                    </svg>
+                    Dashboard
+                </a>
         </li>
 
         <li class="nav-title">Proposal</li>
@@ -35,35 +37,49 @@
         {{-- Menu Inovasi Berdasarkan Role / Permission --}}
         <li class="nav-item">
             @role('admin')
-                <a class="nav-link {{ request()->routeIs('inovasi.admin.*') ? 'active' : '' }}" href="{{ route('inovasi.admin.index') }}">
-            @else
-                <a class="nav-link {{ request()->routeIs('inovasi.masyarakat.*') ? 'active' : '' }}" href="{{ route('inovasi.masyarakat.index') }}">
-            @endrole
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M15.686 0.75h-13.436v22.5h19.875v-16.061zM20.625 7.811v0.064h-5.625v-5.625h0.064zM3.75 21.75v-19.5h9.75v7.125h7.125v12.375z">
-                    </path>
-                </svg>
-                Inovasi
-            </a>
+                <a class="nav-link {{ request()->routeIs('inovasi.admin.*') ? 'active' : '' }}"
+                    href="{{ route('inovasi.admin.index') }}">
+                @else
+                    <a class="nav-link {{ request()->routeIs('inovasi.masyarakat.*') ? 'active' : '' }}"
+                        href="{{ route('inovasi.masyarakat.index') }}">
+                    @endrole
+                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M15.686 0.75h-13.436v22.5h19.875v-16.061zM20.625 7.811v0.064h-5.625v-5.625h0.064zM3.75 21.75v-19.5h9.75v7.125h7.125v12.375z">
+                        </path>
+                    </svg>
+                    Inovasi
+                </a>
         </li>
 
         {{-- Khusus Admin: User & System Management --}}
         @role('admin')
-        <li class="nav-title">Manage</li>
-        <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('users.admin.*') ? 'active' : '' }}" href="{{ route('users.admin.index') }}">
-                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M21.682 14.826l-3.016-1.974 1.161-2.129c0.269-0.5 0.427-1.093 0.428-1.724v-3.375c0-0.004 0-0.008 0-0.012 0-2.691-2.181-4.872-4.872-4.872-1.281 0-2.446 0.494-3.316 1.302l0.003-0.003 1.019 1.1c0.6-0.556 1.405-0.897 2.291-0.897 1.864 0 3.375 1.511 3.375 3.375 0 0.002 0 0.005 0 0.007v-0 3.375c-0 0.367-0.091 0.713-0.25 1.018l0.006-0.012-1.824 3.344 4.175 2.732c0.542 0.358 0.894 0.965 0.894 1.654 0 0.002 0 0.005-0 0.007v-0 2.508h-3.375v1.5h4.875v-4.008c0-0.003 0-0.006 0-0.009 0-1.211-0.62-2.277-1.56-2.898l-0.013-0.008z">
-                    </path>
-                    <path
-                        d="M14.932 16.326l-3.016-1.974 1.161-2.129c0.269-0.5 0.427-1.093 0.428-1.724v-3.375c-0.002-2.694-2.184-4.877-4.877-4.881h-0c-2.687 0-4.873 2.19-4.873 4.881v3.375c-0 0.005-0 0.011-0 0.017 0 0.624 0.156 1.212 0.432 1.726l-0.010-0.020 1.168 2.14-2.999 1.962c-0.953 0.629-1.573 1.695-1.573 2.905 0 0.002 0 0.004 0 0.006v-0l-0.023 4.012h15.754v-4.008c0-0.003 0-0.006 0-0.009 0-1.211-0.62-2.277-1.56-2.898l-0.013-0.008zM15.004 21.75h-12.746l0.015-2.508c0-0.002 0-0.004 0-0.007 0-0.689 0.352-1.295 0.887-1.649l0.007-0.005 4.157-2.72-1.831-3.356c-0.151-0.29-0.239-0.633-0.239-0.997 0-0.003 0-0.006 0-0.009v0-3.375c0-1.864 1.511-3.375 3.375-3.375s3.375 1.511 3.375 3.375v0 3.375c-0 0.367-0.091 0.713-0.25 1.018l0.006-0.012-1.824 3.344 4.175 2.732c0.542 0.358 0.894 0.965 0.894 1.654 0 0.002 0 0.005-0 0.007v-0z">
-                    </path>
-                </svg>
-                Users
-            </a>
-        </li>
+            <li class="nav-title">Manage</li>
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('users.admin.*') ? 'active' : '' }}"
+                    href="{{ route('users.admin.index') }}">
+                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M21.682 14.826l-3.016-1.974 1.161-2.129c0.269-0.5 0.427-1.093 0.428-1.724v-3.375c0-0.004 0-0.008 0-0.012 0-2.691-2.181-4.872-4.872-4.872-1.281 0-2.446 0.494-3.316 1.302l0.003-0.003 1.019 1.1c0.6-0.556 1.405-0.897 2.291-0.897 1.864 0 3.375 1.511 3.375 3.375 0 0.002 0 0.005 0 0.007v-0 3.375c-0 0.367-0.091 0.713-0.25 1.018l0.006-0.012-1.824 3.344 4.175 2.732c0.542 0.358 0.894 0.965 0.894 1.654 0 0.002 0 0.005-0 0.007v-0 2.508h-3.375v1.5h4.875v-4.008c0-0.003 0-0.006 0-0.009 0-1.211-0.62-2.277-1.56-2.898l-0.013-0.008z">
+                        </path>
+                        <path
+                            d="M14.932 16.326l-3.016-1.974 1.161-2.129c0.269-0.5 0.427-1.093 0.428-1.724v-3.375c-0.002-2.694-2.184-4.877-4.877-4.881h-0c-2.687 0-4.873 2.19-4.873 4.881v3.375c-0 0.005-0 0.011-0 0.017 0 0.624 0.156 1.212 0.432 1.726l-0.010-0.020 1.168 2.14-2.999 1.962c-0.953 0.629-1.573 1.695-1.573 2.905 0 0.002 0 0.004 0 0.006v-0l-0.023 4.012h15.754v-4.008c0-0.003 0-0.006 0-0.009 0-1.211-0.62-2.277-1.56-2.898l-0.013-0.008zM15.004 21.75h-12.746l0.015-2.508c0-0.002 0-0.004 0-0.007 0-0.689 0.352-1.295 0.887-1.649l0.007-0.005 4.157-2.72-1.831-3.356c-0.151-0.29-0.239-0.633-0.239-0.997 0-0.003 0-0.006 0-0.009v0-3.375c0-1.864 1.511-3.375 3.375-3.375s3.375 1.511 3.375 3.375v0 3.375c-0 0.367-0.091 0.713-0.25 1.018l0.006-0.012-1.824 3.344 4.175 2.732c0.542 0.358 0.894 0.965 0.894 1.654 0 0.002 0 0.005-0 0.007v-0z">
+                        </path>
+                    </svg>
+                    Users
+                </a>
+            </li>
+            <li class="nav-item mt-1">
+                <a class="nav-link"
+                    href="#">
+                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M4.766 18.75h16.984v-18h-17.031c-1.568 0.005-2.839 1.275-2.844 2.843v16.575h0.001c-0 0.007-0.001 0.014-0.001 0.021 0 1.659 1.302 3.061 2.844 3.061h17.031v-1.5h-17.031c-0.703 0-1.344-0.744-1.344-1.561 0-0.78 0.637-1.439 1.391-1.439zM16.875 2.266v8.101l-2.269-1.992-2.231 1.98v-8.089zM10.875 2.25v10.125h1.483l2.254-2 2.278 2h1.486v-10.125h1.875v15h-13.871l-0.004-15zM4.719 2.25h0.156l0.004 15h-0.113c-0.512 0-0.991 0.137-1.404 0.377l0.013-0.007v-14.014c0-0.001 0-0.003 0-0.004 0-0.744 0.601-1.347 1.343-1.351h0z">
+                        </path>
+                    </svg>
+                    Pengumuman
+                </a>
+            </li>
         @endrole
     </ul>
     <div class="sidebar-footer border-top d-none d-md-flex">

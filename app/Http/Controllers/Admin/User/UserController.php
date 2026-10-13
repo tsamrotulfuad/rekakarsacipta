@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -62,9 +63,17 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         $user = User::findOrFail($id);
-        // Hapus Record dari Database
-        $user->delete();
 
-        return redirect()->route('users.admin.index')->with('success', 'Data berhasil dihapus.');
+        try {
+            // Hapus Record dari Database
+            $user->delete();
+
+            return redirect()->route('users.admin.index')
+                ->with('success', 'Data berhasil dihapus.');
+        } catch (QueryException $e) {
+            // Menangkap error foreign key constraint jika user punya relasi di tabel lain
+            return redirect()->route('users.admin.index')
+                ->with('error', 'Data gagal dihapus karena masih digunakan di tabel lain.');
+        }
     }
 }

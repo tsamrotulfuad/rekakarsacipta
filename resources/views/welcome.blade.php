@@ -11,8 +11,6 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="{{ asset('logo/rkc-logo.webp') }}">
 
-    @vite([])
-
     <!-- Custom CSS untuk mempercantik Countdown dan Jumbotron -->
     <style>
         .countdown-box {
@@ -106,7 +104,7 @@
             <div class="carousel-inner">
                 <!-- Slide 1 (Tema Lomba Inovasi) -->
                 <div class="carousel-item active"
-                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop') no-repeat center center; background-size: cover;">
+                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('http://127.0.0.1:8000/covers/rkc2025.webp') no-repeat center center; background-size: cover;">
                     <div class="container-fluid py-5">
                         <div class="row align-items-center justify-content-center text-center text-white"
                             style="min-height: 450px;">
@@ -126,7 +124,7 @@
                 </div>
                 <!-- Slide 2 (Tema Kompetisi/Eksibisi) -->
                 <div class="carousel-item"
-                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop') no-repeat center center; background-size: cover;">
+                    style="min-height: 450px; background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('http://127.0.0.1:8000/covers/covers.webp') no-repeat center center; background-size: cover;">
                     <div class="container py-5">
                         <div class="row align-items-center justify-content-center text-center text-white"
                             style="min-height: 450px;">
