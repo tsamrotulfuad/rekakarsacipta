@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $totalInovasi = InovasiMasyarakat::count();
-        $totalMasyarat = User::role('admin')->count();
+        $totalMasyarat = User::role('masyarakat')->count();
 
         return view('admin.dashboard.index', compact('totalInovasi', 'totalMasyarat'));
     }
