@@ -29,13 +29,20 @@
                                     <a href="{{ route('users.admin.edit', $item->id) }}"
                                         class="btn btn-primary btn-sm">Edit</a>
 
-                                    <form onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
-                                        action="{{ route('users.admin.destroy', $item->id) }}" method="POST"
-                                        class="m-0">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm text-white">Hapus</button>
-                                    </form>
+                                    @if ($item->inovasi_count > 0)
+                                        <button type="button" class="btn btn-secondary btn-sm text-white" disabled
+                                            title="User masih memiliki data inovasi">
+                                            Hapus
+                                        </button>
+                                    @else
+                                        <form onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
+                                            action="{{ route('users.admin.destroy', $item->id) }}" method="POST"
+                                            class="m-0">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm text-white">Hapus</button>
+                                        </form>
+                                    @endif
                                 </div>
                             </td>
                         </tr>

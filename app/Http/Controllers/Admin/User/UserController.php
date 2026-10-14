@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = User::latest()->role('masyarakat')->paginate(10);
+        $user = User::withCount('inovasi')->latest()->role('masyarakat')->paginate(10);
         return view('admin.user.index', compact('user'));
     }
 
@@ -64,16 +64,15 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        try {
-            // Hapus Record dari Database
-            $user->delete();
-
+        // Tolak penghapusan jika user masih memiliki data inovasi
+        if ($user->inovasi()->exists()) {
             return redirect()->route('users.admin.index')
-                ->with('success', 'Data berhasil dihapus.');
-        } catch (QueryException $e) {
-            // Menangkap error foreign key constraint jika user punya relasi di tabel lain
-            return redirect()->route('users.admin.index')
-                ->with('error', 'Data gagal dihapus karena masih digunakan di tabel lain.');
+                ->with('error', 'User tidak dapat dihapus karena masih memiliki data inovasi.');
         }
+
+        $user->delete();
+
+        return redirect()->route('users.admin.index')
+            ->with('success', 'Data user berhasil dihapus.');
     }
 }

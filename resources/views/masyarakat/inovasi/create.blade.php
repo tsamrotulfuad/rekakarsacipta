@@ -275,7 +275,7 @@
                             class="text-danger">*</span></label>
                     <input type="url" class="form-control @error('kualitas_video') is-invalid @enderror"
                         name="kualitas_video" id="kualitas_video" value="{{ old('kualitas_video') }}"
-                        placeholder="https://youtube.com/..." required>
+                        placeholder="Youtube atau Instagram" required>
                     @error('kualitas_video')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
