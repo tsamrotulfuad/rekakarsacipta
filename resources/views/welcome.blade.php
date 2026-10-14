@@ -53,7 +53,7 @@
 
             <!-- MOBILE ACTIONS: Tampil hanya di ukuran mobile (tombol login & toggler) -->
             <div class="d-flex align-items-center d-lg-none gap-2">
-                <a href="#login" class="btn btn-outline-primary btn-md">Login</a>
+                <a href="{{ route('login')}}" class="btn btn-outline-primary btn-md">Login</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false"
                     aria-label="Toggle navigation">
