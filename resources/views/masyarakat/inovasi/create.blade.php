@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="skd" class="form-label">SKD / SKKT / SKTS</label>
+                    <label for="skd" class="form-label">Surat Keterangan Domisili / SKKT / SKTS</label>
                     <input type="file" class="form-control @error('skd') is-invalid @enderror" name="skd"
                         id="skd">
                     @error('skd')

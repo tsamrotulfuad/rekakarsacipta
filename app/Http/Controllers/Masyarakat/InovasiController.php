@@ -41,16 +41,16 @@ class InovasiController extends Controller
             'tujuan'         => 'required',
             'manfaat'        => 'required',
             'hasil'          => 'required',
-            'penghargaan'    => 'nullable|file', // tambahkan validasi tipe file
+            'penghargaan'    => 'nullable|file|mimes:pdf|max:2048', // tambahkan validasi tipe file
             'tahun'          => 'required',
 
             // Indikator
             'kemudahan_proses'   => 'required',
             'keterlibatan_aktor' => 'required',
             'sosialisasi'        => 'required',
-            'sosialisasi_upload' => 'required|file', // tambahkan validasi tipe file
+            'sosialisasi_upload' => 'required|file|mimes:pdf|max:2048', // tambahkan validasi tipe file
             'kemanfaatan'        => 'required',
-            'kemanfaatan_upload' => 'required|file', // tambahkan validasi tipe file
+            'kemanfaatan_upload' => 'required|file|mimes:pdf|max:2048', // tambahkan validasi tipe file
             'kualitas_video'     => 'required',
         ]);
 
@@ -91,7 +91,7 @@ class InovasiController extends Controller
             'asal_instansi'  => 'nullable',
             'hp'             => 'required|max:14',
             'ktp'            => 'required|max:16',
-            'skd'            => 'required',
+            'skd'            => 'required|file|mimes:pdf|max:2048',
             'bentuk'         => 'required',
             'tahapan'        => 'required',
             'jenis'          => 'required',
@@ -101,16 +101,16 @@ class InovasiController extends Controller
             'tujuan'         => 'required',
             'manfaat'        => 'required',
             'hasil'          => 'required',
-            'penghargaan'    => 'nullable|file', // tambahkan validasi tipe file
+            'penghargaan'    => 'nullable|file|mimes:pdf|max:2048', // tambahkan validasi tipe file
             'tahun'          => 'required',
 
             // Indikator
             'kemudahan_proses'   => 'required',
             'keterlibatan_aktor' => 'required',
             'sosialisasi'        => 'required',
-            'sosialisasi_upload' => 'required|file', // tambahkan validasi tipe file
+            'sosialisasi_upload' => 'required|file|mimes:pdf|max:2048', // tambahkan validasi tipe file
             'kemanfaatan'        => 'required',
-            'kemanfaatan_upload' => 'required|file', // tambahkan validasi tipe file
+            'kemanfaatan_upload' => 'required|file|mimes:pdf|max:2048', // tambahkan validasi tipe file
             'kualitas_video'     => 'required',
         ]);
 
