@@ -199,7 +199,7 @@
         <ul class="list-group list-group-flush w-75 mx-auto">
             <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
                 Panduan Pendaftaran Tahun 2026
-                <a href="#" class="btn btn-sm btn-success">Download</a>
+                <a href="https://drive.google.com/file/d/1gRfTTn0SW1fIs8yjJHhh3CU5jGt56pBy/view?usp=sharing" class="btn btn-sm btn-success">Download</a>
             </li>
 
         </ul>
@@ -256,7 +256,7 @@
     <!-- Script Countdown Timer -->
     <script>
         // Set tanggal akhir hitung mundur (Contoh: 31 Desember 2026)
-        const countDownDate = new Date("Nov 15, 2026 23:59:59").getTime();
+        const countDownDate = new Date("Nov 2, 2026 23:59:59").getTime();
 
         const x = setInterval(function() {
             // Ambil waktu hari ini
