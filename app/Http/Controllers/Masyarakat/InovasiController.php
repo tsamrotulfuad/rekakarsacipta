@@ -87,7 +87,7 @@ class InovasiController extends Controller
         $validatedData = $request->validate([
             'nama_inovasi'   => 'required|max:255',
             'nama_inisiator' => 'required|max:255',
-            'ketegori'       => 'required',
+            'kategori'       => 'required',
             'asal_instansi'  => 'nullable',
             'hp'             => 'required|max:14',
             'ktp'            => 'required|max:16',
