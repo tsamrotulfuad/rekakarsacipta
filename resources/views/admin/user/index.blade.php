@@ -14,6 +14,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">Email</th>
                         <th scope="col">Tanggal Daftar</th>
+                        <th scope="col">Tanggal Verifikasi</th>
                         <th scope="col" style="width: 10%">Aksi</th>
                     </tr>
                 </thead>
@@ -23,6 +24,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
+                            <td>{{ $item->create_at }}</td>
                             <td>{{ $item->email_verified_at }}</td>
                             <td>
                                 <div class="d-flex gap-1 align-items-center">
