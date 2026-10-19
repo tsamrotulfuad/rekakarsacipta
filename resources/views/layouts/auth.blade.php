@@ -9,7 +9,7 @@
 
     <title>Reka Karsa Cipta</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('logo/rkc-logo.webp') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('logo/Logo-RKC-Emas.webp') }}">
     <!-- Vendors styles-->
     <link rel="stylesheet" href="{{ asset('vendors/simplebar/css/simplebar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/vendors/simplebar.css') }}">
@@ -24,7 +24,7 @@
         <div class="container" style="max-width: 32rem">
             <div class="d-flex flex-column gap-4 my-4">
                 <!-- LOGO BARU DENGAN FORMAT .WEBP -->
-                <img src="{{ asset('logo/Logo-RKC-Emas.webp') }}" alt="Logo Reka Karsa Cipta" height="104"
+                <img src="{{ asset('logo/Logo-RKC-Emas.webp') }}" alt="Logo Reka Karsa Cipta" height="124"
                     class="mx-auto w-auto object-fit-contain">
 
                 @yield('content')

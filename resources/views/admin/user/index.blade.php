@@ -21,7 +21,7 @@
                 <tbody>
                     @forelse($user as $item)
                         <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
+                            <th scope="row">{{ $loop->index + $items->firstItem() }}</th>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->created_at }}</td>
