@@ -21,7 +21,7 @@
                 <tbody>
                     @forelse($user as $item)
                         <tr>
-                            <th scope="row">{{ $loop->index + $items->firstItem() }}</th>
+                            <th scope="row">{{ $user->firstItem() + $loop->index }}</th>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->created_at }}</td>
@@ -56,8 +56,8 @@
                 </tbody>
             </table>
             <div class="mt-3">
-    {{ $user->links() }}
-</div>
+                {{ $user->links() }}
+            </div>
         </div>
     </div>
 @endsection
