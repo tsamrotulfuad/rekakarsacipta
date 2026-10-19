@@ -38,6 +38,7 @@
                 </div>
             @endif
             <form class="row gap-3" action="{{ route('login') }}" method="POST" autocomplete="off" novalidate>
+                @csrf 
                 <div>
                     <label class="form-label" for="email">Email </label>
                     <input class="form-control" id="email" name="email" type="email" placeholder="Email"

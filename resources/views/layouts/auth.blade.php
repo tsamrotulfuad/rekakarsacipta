@@ -24,7 +24,7 @@
         <div class="container" style="max-width: 32rem">
             <div class="d-flex flex-column gap-4 my-4">
                 <!-- LOGO BARU DENGAN FORMAT .WEBP -->
-                <img src="{{ asset('logo/rkc-logo.webp') }}" alt="Logo Reka Karsa Cipta" height="104"
+                <img src="{{ asset('logo/Logo-RKC-Emas.webp') }}" alt="Logo Reka Karsa Cipta" height="104"
                     class="mx-auto w-auto object-fit-contain">
 
                 @yield('content')

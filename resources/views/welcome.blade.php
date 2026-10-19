@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="{{ asset('logo/rkc-logo.webp') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('logo/Logo-RKC-Emas.webp') }}">
 
     <!-- Custom CSS untuk mempercantik Countdown dan Jumbotron -->
     <style>
@@ -47,7 +47,7 @@
         <div class="container-fluid">
             <!-- LOGO: Berada di luar collapse agar selalu tampil di Mobile -->
             <a class="navbar-brand me-auto" href="/">
-                <img src="{{ asset('logo/rkc-logo.webp') }}" alt="Logo Reka Karsa Cipta" height="36"
+                <img src="{{ asset('logo/Logo-RKC-Emas.webp') }}" alt="Logo Reka Karsa Cipta" height="36"
                     class="d-inline-block align-text-top object-fit-contain">
             </a>
 

@@ -2,7 +2,7 @@
     <div class="sidebar-header border-bottom">
         <div class="sidebar-brand me-auto">
             <!-- LOGO BARU DENGAN FORMAT .WEBP -->
-            <img src="{{ asset('logo/rkc-logo.webp') }}" alt="Logo Reka Karsa Cipta" height="80"
+            <img src="{{ asset('logo/Logo-RKC-Emas.webp') }}" alt="Logo Reka Karsa Cipta" height="80"
                 class="mx-auto w-auto object-fit-contain">
         </div>
         <button class="btn-close d-lg-none" type="button" data-coreui-theme="dark" aria-label="Close"
