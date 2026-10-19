@@ -33,7 +33,7 @@ class UserController extends Controller
         // Gunakan $validatedData (bukan $request->all()) untuk menyimpan ke database
         User::create($validatedData);
 
-        return redirect()->route('user.admin.index')->with('success', 'Data berhasil ditambahkan.');
+        return redirect()->route('users.admin.index')->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function edit(string $id)

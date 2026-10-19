@@ -31,7 +31,6 @@
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <a href="{{ route('users.admin.index')}}" type="button" class="btn btn-secondary">Batal</a>
                 </div>
-
             </form>
         </div>
     </div>

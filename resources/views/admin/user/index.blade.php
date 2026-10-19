@@ -24,7 +24,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
-                            <td>{{ $item->create_at }}</td>
+                            <td>{{ $item->created_at }}</td>
                             <td>{{ $item->email_verified_at }}</td>
                             <td>
                                 <div class="d-flex gap-1 align-items-center">
@@ -55,6 +55,9 @@
                     @endforelse
                 </tbody>
             </table>
+            <div class="mt-3">
+    {{ $user->links() }}
+</div>
         </div>
     </div>
 @endsection
