@@ -33,14 +33,18 @@
                             <td>
                                 <div class="d-flex gap-1 align-items-center">
                                     <a href="{{ route('inovasi.masyarakat.edit', $item) }}"
-                                        class="btn btn-primary btn-sm">Edit</a>
+                                        class="btn btn-primary btn-sm">
+                                        <x-bi-pencil-square style="width: 1em; height: 1em;" />
+                                    </a>
 
                                     <form onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');"
                                         action="{{ route('inovasi.masyarakat.destroy', $item) }}" method="POST"
                                         class="m-0">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm text-white">Hapus</button>
+                                        <button type="submit" class="btn btn-danger btn-sm text-white">
+                                            <x-bi-trash-fill style="width: 1em; height: 1em;" />
+                                        </button>
                                     </form>
                                 </div>
                             </td>

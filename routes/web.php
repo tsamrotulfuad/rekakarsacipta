@@ -51,6 +51,9 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
     Route::put('/inovasi/masyarakat/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'update'])->name('inovasi.admin.update');
     Route::delete('/inovasi/masyarakat/{id}', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'destroy'])->name('inovasi.admin.destroy');
 
+    // Export Pdf
+    Route::get('/inovasi/masyarakat/{id}/export-pdf', [App\Http\Controllers\Admin\Masyarakat\InovasiController::class, 'exportPdfSingle'])->name('inovasi.admin.export-pdf-single');
+
     // User
     Route::get('/user', [App\Http\Controllers\Admin\User\UserController::class, 'index'])->name('users.admin.index');
     Route::get('/user/tambah', [App\Http\Controllers\Admin\User\UserController::class, 'create'])->name('users.admin.create'); 

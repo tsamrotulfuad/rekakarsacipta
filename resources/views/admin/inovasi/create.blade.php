@@ -10,7 +10,7 @@
                 <h5 class="card-title fw-bolder">1. Proposal Inovasi</h5>
             </div>
 
-            <form action="{{ route('admin.inovasi.store') }}" method="POST" enctype="multipart/form-data" class="row g-3">
+            <form action="{{ route('inovasi.admin.store') }}" method="POST" enctype="multipart/form-data" class="row g-3">
                 @csrf
                 <div class="col-md-12">
                     <label for="nama_inovasi" class="form-label">Nama Inovasi <span class="text-danger">*</span></label>

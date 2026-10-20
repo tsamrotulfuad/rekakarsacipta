@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin\Masyarakat;
 
 use App\Http\Controllers\Controller;
 use App\Models\InovasiMasyarakat;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class InovasiController extends Controller
 {
@@ -172,5 +174,23 @@ class InovasiController extends Controller
         $inovasiMasyarakat->delete();
 
         return redirect()->route('inovasi.masyarakat.index')->with('success', 'Data berhasil dihapus.');
+    }
+
+    public function exportPdfSingle(string $id)
+    {
+        // 1. Ambil data inovasi berdasarkan ID beserta relasinya
+        $inovasi = InovasiMasyarakat::with('user')->findOrFail($id);
+
+        // 2. Load view khusus lembar inovasi tunggal
+        $pdf = Pdf::loadView('admin.inovasi.pdf-detail', compact('inovasi'));
+
+        // Atur ukuran kertas ke A4 Portrait
+        $pdf->setPaper('A4', 'portrait');
+
+        // 3. Buat nama file dinamis berdasarkan nama inovasi
+        $fileName = 'inovasi-' . Str::slug($inovasi->nama_inovasi) . '.pdf';
+
+        // Gunakan stream() agar terbuka di tab baru, atau download() untuk langsung unduh
+        return $pdf->stream($fileName);
     }
 }
