@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="skd" class="form-label">Surat Keterangan Domisili / SKKT / SKTS</label>
+                    <label for="skd" class="form-label">Surat Keterangan Domisili / SKKT / SKTS (Format .pdf / max. 2mb)</label>
                     <input type="file" class="form-control @error('skd') is-invalid @enderror" name="skd"
                         id="skd">
                     @error('skd')
@@ -244,7 +244,7 @@
 
                 <div class="col-md-6">
                     <label for="sosialisasi_upload" class="form-label">Upload Sosialisasi <span
-                            class="text-danger">*</span></label>
+                            class="text-danger">*</span> (Format .pdf dalam satu file / max. 2Mb)</label>
                     <input type="file" class="form-control @error('sosialisasi_upload') is-invalid @enderror"
                         name="sosialisasi_upload" id="sosialisasi_upload" required>
                     @error('sosialisasi_upload')
@@ -262,7 +262,7 @@
 
                 <div class="col-md-6">
                     <label for="kemanfaatan_upload" class="form-label">Upload Kemanfaatan <span
-                            class="text-danger">*</span></label>
+                            class="text-danger">*</span> (Format .pdf dalam satu file / max. 2Mb)</label>
                     <input type="file" class="form-control @error('kemanfaatan_upload') is-invalid @enderror"
                         name="kemanfaatan_upload" id="kemanfaatan_upload" required>
                     @error('kemanfaatan_upload')
@@ -275,7 +275,7 @@
                             class="text-danger">*</span></label>
                     <input type="url" class="form-control @error('kualitas_video') is-invalid @enderror"
                         name="kualitas_video" id="kualitas_video" value="{{ old('kualitas_video') }}"
-                        placeholder="Youtube atau Instagram" required>
+                        placeholder="Link Youtube / Instagram / Tiktok" required>
                     @error('kualitas_video')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

@@ -100,6 +100,18 @@
             <th>Rancang bangun</th>
             <td>{!! $inovasi->rancang_bangun !!}</td>
         </tr>
+         <tr>
+            <th>Tujuan Inovasi</th>
+            <td>{!! $inovasi->tujuan !!}</td>
+        </tr>
+         <tr>
+            <th>Manfaat Inovasi</th>
+            <td>{!! $inovasi->manfaat !!}</td>
+        </tr>
+         <tr>
+            <th>Hasil Inovasi</th>
+            <td>{!! $inovasi->hasil !!}</td>
+        </tr>
     </table>
 
     <div class="signature-section">
