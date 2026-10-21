@@ -90,7 +90,7 @@
         </tr>
         <tr>
             <th>Akun Penginput</th>
-            <td>{{ $inovasi->user->name ?? '-' }} (ID: {{ $inovasi->user_id }})</td>
+            <td>{{ $inovasi->user->name ?? '-' }} (email: {{ $inovasi->user->email }})</td>
         </tr>
         <tr>
             <th>Tanggal Dibuat</th>
