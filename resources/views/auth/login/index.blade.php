@@ -75,11 +75,12 @@
                 </div>
             </form>
 
-            <div class="position-relative">
+            {{-- <div class="position-relative">
                 <hr>
                 <div
                     class="position-absolute top-50 start-50 translate-middle bg-body px-2 text-body-tertiary text-uppercase small">
-                    atau</div>
+                    atau
+                </div>
             </div>
             <div class="row">
                 <div class="col">
@@ -102,7 +103,7 @@
                         Masuk dengan Akun Google
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="text-center text-body-secondary">

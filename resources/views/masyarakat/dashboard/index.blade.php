@@ -11,4 +11,11 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="mt-3">
+            <a href="{{ route('inovasi.masyarakat.create') }}" type="button" class="btn btn-primary">
+               Tambah Inovasi
+            </a>
+        </div>
+    </div>
 @endsection

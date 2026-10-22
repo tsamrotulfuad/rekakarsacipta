@@ -5,6 +5,7 @@
         <div class="card-body d-flex flex-column gap-4">
             <h2 class="h5 text-center">Buat Akun Baru</h2>
             <form class="row gap-3 text-start" action="{{ route('register') }}" method="POST" autocomplete="off" novalidate>
+                @csrf
                 <div>
                     <label class="form-label" for="name">Nama</label>
                     <input class="form-control" name="name" id="name" type="text" placeholder="Masukkan Nama Anda"
@@ -42,7 +43,7 @@
                     <button class="btn btn-primary w-100" type="submit">Buat akun baru</button>
                 </div>
             </form>
-            <div class="position-relative">
+            {{-- <div class="position-relative">
                 <hr>
                 <div
                     class="position-absolute top-50 start-50 translate-middle bg-body px-2 text-body-tertiary text-uppercase small">
@@ -69,7 +70,7 @@
                         Login with Google
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="text-center text-body-secondary">
