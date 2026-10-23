@@ -53,7 +53,7 @@
 
             <!-- MOBILE ACTIONS: Tampil hanya di ukuran mobile (tombol login & toggler) -->
             <div class="d-flex align-items-center d-lg-none gap-2">
-                <a href="{{ route('login')}}" class="btn btn-outline-primary btn-md">Login</a>
+                <a href="{{ route('login') }}" class="btn btn-outline-primary btn-md">Login</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -79,10 +79,20 @@
                 </ul>
 
                 <!-- DESKTOP ACTIONS: Tombol Login & Register untuk ukuran besar -->
-                <div class="d-none d-lg-flex justify-content-end gap-2">
-                    <a href="{{ route('login') }}" class="btn btn-outline-primary">Login</a>
-                    <a href="{{ route('register') }}" class="btn btn-outline-primary">Register</a>
-                </div>
+                @auth
+                    <!-- Content for logged-in users -->
+                    <div class="d-none d-lg-flex justify-content-end gap-2">
+                        <a href="{{ route('masyarakat.dashboard') }}" class="btn btn-outline-primary">Dashboard</a>
+                    </div>
+                @endauth
+
+                @guest
+                    <div class="d-none d-lg-flex justify-content-end gap-2">
+                        <a href="{{ route('login') }}" class="btn btn-outline-primary">Login</a>
+                        <a href="{{ route('register') }}" class="btn btn-outline-primary">Register</a>
+                    </div>
+                @endguest
+
 
                 <!-- MOBILE REGISTER BUTTON: Tampil di dalam collapse untuk mobile -->
                 <div class="d-lg-none mt-2">
@@ -115,7 +125,8 @@
                                 <p class="lead mt-3">Tunjukkan karya terbaikmu di Lomba Inovasi Nasional! Platform
                                     unggulan untuk kolaborasi, kreativitas, dan pengembangan masa depan.</p>
                                 <div class="d-flex justify-content-center gap-3 mt-4">
-                                    <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 shadow">Daftar Sekarang</a>
+                                    <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 shadow">Daftar
+                                        Sekarang</a>
                                     <a href="#unduhan" class="btn btn-outline-light btn-lg px-4">Unduh Panduan</a>
                                 </div>
                             </div>
@@ -132,7 +143,8 @@
                                 <span
                                     class="badge bg-warning text-dark px-3 py-2 rounded-pill text-uppercase mb-3">Pengumuman</span>
                                 <h1 class="display-4 fw-bold">Siapkan Inovasi Terbaikmu!</h1>
-                                <p class="lead mt-3">Jangan lewatkan kesempatan memperebutkan total hadiah, penghargaan, dan bimbingan eksklusif.</p>
+                                <p class="lead mt-3">Jangan lewatkan kesempatan memperebutkan total hadiah, penghargaan,
+                                    dan bimbingan eksklusif.</p>
                                 <div class="d-flex justify-content-center gap-3 mt-4">
                                     <a href="#kontak" class="btn btn-outline-light btn-lg px-4">Hubungi Kami</a>
                                 </div>
@@ -199,7 +211,8 @@
         <ul class="list-group list-group-flush w-75 mx-auto">
             <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
                 Panduan Pendaftaran Tahun 2026
-                <a href="https://drive.google.com/file/d/1gRfTTn0SW1fIs8yjJHhh3CU5jGt56pBy/view?usp=sharing" class="btn btn-sm btn-success">Download</a>
+                <a href="https://drive.google.com/file/d/1gRfTTn0SW1fIs8yjJHhh3CU5jGt56pBy/view?usp=sharing"
+                    class="btn btn-sm btn-success">Download</a>
             </li>
 
         </ul>
