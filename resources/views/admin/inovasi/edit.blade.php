@@ -10,7 +10,7 @@
                 <h5 class="card-title fw-bolder">1. Proposal Inovasi</h5>
             </div>
 
-            <form action="{{ route('inovasi.masyarakat.update', $inovasiMasyarakat->id) }}" method="POST" enctype="multipart/form-data" class="row g-3" >
+            <form action="{{ route('inovasi.admin.update', $inovasiMasyarakat->id) }}" method="POST" enctype="multipart/form-data" class="row g-3" >
                 @csrf
                 @method('PUT')
                 <div class="col-md-12">
