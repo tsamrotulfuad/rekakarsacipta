@@ -211,7 +211,7 @@
         <ul class="list-group list-group-flush w-75 mx-auto">
             <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
                 Panduan Pendaftaran Tahun 2026
-                <a href="https://drive.google.com/file/d/1gRfTTn0SW1fIs8yjJHhh3CU5jGt56pBy/view?usp=sharing"
+                <a href="https://drive.google.com/file/d/1jUeLT17iIreNxS8-0Swu-0KLzPeaRDUB/view?usp=sharing"
                     class="btn btn-sm btn-success">Download</a>
             </li>
 
