@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="{{ asset('logo/Logo-RKC-Emas.webp') }}">
@@ -12,50 +13,59 @@
             line-height: 1.5;
             margin: 20px;
         }
+
         .header {
             text-align: center;
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
+
         .header h2 {
             margin: 0;
             font-size: 18px;
             text-transform: uppercase;
         }
+
         .header p {
             margin: 4px 0 0;
             font-size: 12px;
             color: #666;
         }
+
         .table-detail {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
         }
-        .table-detail th, 
+
+        .table-detail th,
         .table-detail td {
             padding: 9px 12px;
             border: 1px solid #ddd;
             vertical-align: top;
         }
+
         .table-detail th {
             background-color: #f7f7f7;
             text-align: left;
             width: 30%;
             font-weight: bold;
         }
+
         .signature-section {
             margin-top: 40px;
             float: right;
             text-align: center;
             width: 200px;
         }
+
         .signature-space {
             height: 60px;
         }
     </style>
 </head>
+
 <body>
 
     <div class="header">
@@ -100,17 +110,21 @@
             <th>Rancang bangun</th>
             <td>{!! $inovasi->rancang_bangun !!}</td>
         </tr>
-         <tr>
+        <tr>
             <th>Tujuan Inovasi</th>
             <td>{!! $inovasi->tujuan !!}</td>
         </tr>
-         <tr>
+        <tr>
             <th>Manfaat Inovasi</th>
             <td>{!! $inovasi->manfaat !!}</td>
         </tr>
-         <tr>
+        <tr>
             <th>Hasil Inovasi</th>
             <td>{!! $inovasi->hasil !!}</td>
+        </tr>
+        <tr>
+            <th>Video Inovasi</th>
+            <td>{!! $inovasi->kualitas_video !!}</td>
         </tr>
     </table>
 
@@ -121,4 +135,5 @@
     </div>
 
 </body>
+
 </html>
