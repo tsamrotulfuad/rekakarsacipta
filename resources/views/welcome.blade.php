@@ -269,7 +269,7 @@
     <!-- Script Countdown Timer -->
     <script>
         // Set tanggal akhir hitung mundur (Contoh: 31 Desember 2026)
-        const countDownDate = new Date("Nov 2, 2026 23:59:59").getTime();
+        const countDownDate = new Date("Nov 3, 2026 23:59:59").getTime();
 
         const x = setInterval(function() {
             // Ambil waktu hari ini

@@ -123,6 +123,14 @@
             <td>{!! $inovasi->hasil !!}</td>
         </tr>
         <tr>
+            <th>Sosialisasi Inovasi</th>
+            <td>{!! $inovasi->sosialisasi !!}</td>
+        </tr>
+        <tr>
+            <th>Kemanfaatan Inovasi</th>
+            <td>{!! $inovasi->kemanfaatan !!}</td>
+        </tr>
+        <tr>
             <th>Video Inovasi</th>
             <td>{!! $inovasi->kualitas_video !!}</td>
         </tr>

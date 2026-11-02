@@ -283,7 +283,7 @@
 
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ route('inovasi.masyarakat.index') }}" class="btn btn-secondary">Batal</a>
+                    <a href="{{ route('inovasi.admin.index') }}" class="btn btn-secondary">Batal</a>
                 </div>
             </form>
         </div>
