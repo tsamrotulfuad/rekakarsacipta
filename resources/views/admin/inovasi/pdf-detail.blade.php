@@ -123,8 +123,12 @@
             <td>{!! $inovasi->hasil !!}</td>
         </tr>
         <tr>
-            <th>Sosialisasi Inovasi</th>
-            <td>{!! $inovasi->sosialisasi !!}</td>
+            <th>Kemudahan Proses</th>
+            <td>{!! $inovasi->kemudahan_proses !!}</td>
+        </tr>
+         <tr>
+            <th>Keterlibatan Aktor</th>
+            <td>{!! $inovasi->keterlibatan_aktor !!}</td>
         </tr>
         <tr>
             <th>Kemanfaatan Inovasi</th>
