@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
+    {{-- <div>
         <a href="{{ route('inovasi.masyarakat.create') }}" type="button" class="btn btn-primary">Tambah</a>
-    </div>
+    </div> --}}
     <div class="card mt-4 p-3">
         <div class="table-responsive">
             <table class="table table-hover table-border caption-top ">
