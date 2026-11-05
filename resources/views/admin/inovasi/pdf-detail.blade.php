@@ -112,31 +112,31 @@
         </tr>
         <tr>
             <th>Tujuan Inovasi</th>
-            <td>{!! $inovasi->tujuan !!}</td>
+            <td>{{ $inovasi->tujuan ?? '-' }}</td>
         </tr>
         <tr>
             <th>Manfaat Inovasi</th>
-            <td>{!! $inovasi->manfaat !!}</td>
+            <td>{{ $inovasi->manfaat ?? '-' }}</td>
         </tr>
         <tr>
             <th>Hasil Inovasi</th>
-            <td>{!! $inovasi->hasil !!}</td>
+            <td>{{ $inovasi->hasil ?? '-' }}</td>
         </tr>
         <tr>
             <th>Kemudahan Proses</th>
-            <td>{!! $inovasi->kemudahan_proses !!}</td>
+            <td>{{ $inovasi->kemudahan_proses ?? '-' }}</td>
         </tr>
          <tr>
             <th>Keterlibatan Aktor</th>
-            <td>{!! $inovasi->keterlibatan_aktor !!}</td>
+            <td>{{ $inovasi->keterlibatan_aktor ?? '-' }}</td>
         </tr>
         <tr>
             <th>Kemanfaatan Inovasi</th>
-            <td>{!! $inovasi->kemanfaatan !!}</td>
+            <td>{{ $inovasi->kemanfaatan ?? '-' }}</td>
         </tr>
         <tr>
             <th>Video Inovasi</th>
-            <td>{!! $inovasi->kualitas_video !!}</td>
+            <td>{{ $inovasi->kualitas_video ?? '-' }}</td>
         </tr>
     </table>
 
