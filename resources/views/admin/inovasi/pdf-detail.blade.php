@@ -100,7 +100,7 @@
         </tr>
         <tr>
             <th>Akun Penginput</th>
-            <td>{{ $inovasi->user->name ?? '-' }} (email: {{ $inovasi->user->email }})</td>
+            <td>{{ $inovasi->user->name ?? '-' }}</td>
         </tr>
         <tr>
             <th>Tanggal Dibuat</th>
@@ -140,11 +140,11 @@
         </tr>
     </table>
 
-    <div class="signature-section">
+    {{-- <div class="signature-section">
         <p>Dicetak pada: {{ date('d/m/Y') }}<br>Penanggung Jawab,</p>
         <div class="signature-space"></div>
         <p><strong>( ..................................... )</strong></p>
-    </div>
+    </div> --}}
 
 </body>
 
