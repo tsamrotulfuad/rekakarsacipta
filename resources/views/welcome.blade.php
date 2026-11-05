@@ -160,7 +160,8 @@
     <section id="countdown-section" class="container mt-5 py-5 border-bottom">
         <div class="row justify-content-center text-center">
             <div class="col-md-8">
-                <h2 class="mb-4 fw-bold">Pendaftaran Ditutup Dalam:</h2>
+                {{-- <h2 class="mb-4 fw-bold">Pendaftaran Ditutup Dalam:</h2> --}}
+                <h2 class="mb-4 fw-bold">Pendaftaran Ditutup</h2>
                 <div class="row g-2 justify-content-center">
                     <div class="col-6 col-md-3">
                         <div class="countdown-box">
